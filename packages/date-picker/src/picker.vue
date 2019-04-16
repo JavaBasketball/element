@@ -815,6 +815,12 @@ export default {
       this.picker.value = this.parsedValue;
       this.picker.resetView && this.picker.resetView();
 
+        // fixed date reset bug by dang start
+        if(!this.picker.value){
+            this.picker.date = new Date();
+        }
+        // fixed date reset bug by dang end
+
       this.$nextTick(() => {
         this.picker.adjustSpinners && this.picker.adjustSpinners();
       });
